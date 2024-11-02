@@ -67,7 +67,7 @@ class Coleccion:
         return interpretes
 
     def dar_album_por_id(self, album_id):
-        return session.get(Album, album_id).__dict__
+        return session.query(Album).get(album_id).__dict__
 
     def buscar_albumes_por_titulo(self, album_titulo):
         albumes = [
