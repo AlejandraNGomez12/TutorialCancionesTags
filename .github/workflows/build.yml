@@ -27,12 +27,7 @@ jobs:
       - name: pruebas+coverage
         id: pruebas
         run: |
-          pwd
-          ls                    
           python -m coverage run -m unittest discover -s tests -v
-          echo 'Miramos el reporte'
-          coverage report
-          echo 'Guardamos archivo'
           python -m coverage xml -i
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
